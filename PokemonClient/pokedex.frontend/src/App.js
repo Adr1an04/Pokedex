@@ -1,9 +1,11 @@
 import './App.css';
 import api from './api/axiosConfig';
 import {useState, useEffect} from 'react';
+import { NavBar } from './components/navbar'
 import Layout from './components/Layout';
 import {Routes, Route} from 'react-router-dom';
 import Home from './components/home/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -28,14 +30,15 @@ function App() {
    
   return (
     <div className="App">
-      
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route path="/" element={<Home/>} ></Route>
+      <NavBar>
 
-        </Route>
-      </Routes>
+      </NavBar>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<Home/>} ></Route>
 
+          </Route>
+        </Routes>
     </div>
   );
 }
